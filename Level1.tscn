@@ -11,10 +11,7 @@
 tile_set = ExtResource( 1 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 393226, 6, 0, 393227, 4, 0, 393228, 4, 0, 393229, 7, 0, 458754, 6, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 7, 0 )
-
-[node name="Steve" parent="." instance=ExtResource( 2 )]
-position = Vector2( 161.13, 397.779 )
+tile_data = PoolIntArray( 393225, 6, 0, 393226, 2, 0, 393227, 4, 0, 393228, 4, 0, 393229, 7, 0, 458754, 6, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 7, 0 )
 
 [node name="Block" parent="." instance=ExtResource( 3 )]
 position = Vector2( 698.261, 351.742 )
@@ -23,3 +20,11 @@ collision_mask = 3
 
 [node name="Goal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 820.024, 335.79 )
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="Steve" parent="player" instance=ExtResource( 2 )]
+position = Vector2( 603.438, 226.822 )
+
+[connection signal="input_event" from="player/Steve" to="player/Steve" method="_on_Steve_input_event"]
+[connection signal="ready" from="player/Steve" to="player/Steve" method="_on_Steve_ready"]
