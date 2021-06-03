@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Steve.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Goal.tscn" type="PackedScene" id=4]
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 393226, 6, 0, 393227, 4, 0, 393228, 4, 0, 393229, 7, 0, 458754, 6, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 7, 0 )
+
+[node name="Steve" parent="." instance=ExtResource( 2 )]
+position = Vector2( 161.13, 397.779 )
+
+[node name="Block" parent="." instance=ExtResource( 3 )]
+position = Vector2( 698.261, 351.742 )
+collision_layer = 64
+collision_mask = 3
+
+[node name="Goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 820.024, 335.79 )
